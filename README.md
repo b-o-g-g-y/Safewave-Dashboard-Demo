@@ -1,9 +1,77 @@
 # SafeWave Dashboard — Product Requirements Document
 
 **Version:** 1.0
-**Date:** October 2026
+**Date:** April 2026
 **Owner:** Bogdan Shoyat
 **Status:** Draft for team review
+
+---
+
+## Running the pitch demo locally
+
+This repository contains a working pitch demo of the dashboard under
+[`dashboard-sample/`](./). It is a single-file React prototype (Vite + React +
+Tailwind CSS) with no backend — safe to clone, run, and show to investors or
+customers.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18 or newer (verify with `node -v`)
+- npm (ships with Node)
+- Git
+
+### 1. Get the repository
+
+```bash
+git clone <your-repo-url> safewave
+cd safewave/dashboard-sample
+```
+
+(Replace `<your-repo-url>` with the actual remote URL. If you don't have a
+remote, just copy the `dashboard-sample/` folder anywhere on disk and `cd` into
+it.)
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the dev server
+
+```bash
+npm run dev
+```
+
+Open **http://localhost:5173** in your browser. The dashboard boots into the
+Org Admin view for **Michigan Hospital**.
+
+### Using the demo
+
+- **Role switcher** — the pill in the top-right flips between *Super Admin*
+  (internal platform view) and *Org Admin* (tenant view).
+- **Tenant switch** — as Super Admin, click the facility pill in the sidebar
+  to switch between the six seeded orgs, or click **Enter** on any row of the
+  Organizations screen.
+- **Scripted incident** — hit **Start demo** on the floating control bar
+  (bottom-center). A ~75-second incident plays out end to end: sound detected
+  → cascade fires → bands vibrate → acknowledgments roll in → supervisor sends
+  All Clear. A step-by-step narrator card explains each beat.
+- **Worker view** — click the *Worker view* tab on the right edge to open the
+  phone mockup. It stays in sync with the dashboard during the scripted demo.
+- **Info tooltips** — hover any `i` icon next to a page title or card header
+  for a one-sentence description of that surface.
+
+### Build for deployment
+
+```bash
+npm run build     # outputs static site to dist/
+npm run preview   # serves the built site locally for a sanity check
+```
+
+The build output is static HTML/JS/CSS, so it can be hosted anywhere —
+Netlify, Vercel, S3 + CloudFront, GitHub Pages, or even
+`python -m http.server` for a quick share.
 
 ---
 
