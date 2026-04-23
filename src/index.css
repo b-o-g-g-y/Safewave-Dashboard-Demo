@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* ============================================================ */
+/* Demo animations — used by the scripted incident simulation   */
+/* ============================================================ */
+
+@keyframes sw-pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.85; }
+  100% { transform: scale(2.2); opacity: 0;    }
+}
+.sw-pulse-ring {
+  animation: sw-pulse-ring 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes sw-row-flash {
+  from { background-color: rgba(254, 243, 199, 0.85); }
+  to   { background-color: transparent; }
+}
+.sw-row-flash {
+  animation: sw-row-flash 900ms ease-out;
+}
+
+@keyframes sw-alert-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.55); }
+  50%      { box-shadow: 0 0 0 10px rgba(217, 119, 6, 0); }
+}
+.sw-alert-pulse {
+  animation: sw-alert-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes sw-stripe-pulse {
+  0%, 100% { opacity: 1;   }
+  50%      { opacity: 0.55; }
+}
+.sw-stripe-pulse {
+  animation: sw-stripe-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes sw-fade-out {
+  0%, 70% { opacity: 1; }
+  100%    { opacity: 0; }
+}
+.sw-fade-out {
+  animation: sw-fade-out 3.5s ease-in forwards;
+}
